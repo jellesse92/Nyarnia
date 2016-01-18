@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class CatSpawner : MonoBehaviour {
+	
+	GameState gameState;
     public float spawnTimer;
     private float timer;
     public int cat_limit;
@@ -12,17 +14,19 @@ public class CatSpawner : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        timer = spawnTimer;
+		timer = spawnTimer;
+		gameState = GameObject.Find ("GameManager").GetComponent<GameState>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        timer -= Time.deltaTime;
-        if (timer <= 0 & cats_from_spawner < cat_limit)
-        {
-            timer = spawnTimer;
-            Instantiate(cats[Random.Range(0,2)], spawnPoint.position, spawnPoint.rotation);
-            cats_from_spawner++;
-        }
+		if (gameState.inPlay) {
+			timer -= Time.deltaTime;
+			if (timer <= 0 & cats_from_spawner < cat_limit) {
+				timer = spawnTimer;
+				Instantiate (cats [Random.Range (0, 2)], spawnPoint.position, spawnPoint.rotation);
+				cats_from_spawner++;
+			}
+		}
 	}
 }
