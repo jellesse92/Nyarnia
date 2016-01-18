@@ -19,3 +19,6 @@ C:\Users\Jasmine\Documents\GameJam\Cat-Game\Cat Game\Temp\bin\Debug\UnityEngine.
 C:\Users\Jasmine\Documents\GameJam\Cat-Game\Cat Game\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Jasmine\Documents\GameJam\Cat-Game\Cat Game\obj\Debug\Assembly-CSharp.dll
 C:\Users\Jasmine\Documents\GameJam\Cat-Game\Cat Game\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Jasmine\Documents\GameJam\Nyarnia\Cat Game\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Jasmine\Documents\GameJam\Nyarnia\Cat Game\obj\Debug\Assembly-CSharp.dll
+C:\Users\Jasmine\Documents\GameJam\Nyarnia\Cat Game\obj\Debug\Assembly-CSharp.pdb

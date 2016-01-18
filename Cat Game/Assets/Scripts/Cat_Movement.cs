@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Cat_Movement : MonoBehaviour {
-
+    GameState gameState;
     private Vector3 screenPoint;
     private Vector3 offset;
     public float speed = 1.0f;
@@ -14,7 +14,6 @@ public class Cat_Movement : MonoBehaviour {
     private bool is_dropped;
     private float timer;
     Vector3 location;
-
     // Use this for initialization
     void Start () {
         int direction = (int)Random.Range(-1, 2);
@@ -24,34 +23,36 @@ public class Cat_Movement : MonoBehaviour {
         hidden = false;
         is_dropped = false;
         timer = .25F;
+        gameState = GameObject.Find("GameManager").GetComponent<GameState>();
     }
 	
 
 	// Update is called once per frame
 	void Update () {
-
-        if (!hidden)
+        if (gameState.inPlay)
         {
-            move_cat();
-        }
-        else {
-            current_hide_time -= Time.deltaTime;
-        }
-        if (current_hide_time <= 0)
-        {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            hidden = false;
-        }
-        if (is_dropped)
-        {
-            timer -= Time.deltaTime;
-            if (timer < 0)
+            if (!hidden)
             {
-                is_dropped = false;
-                timer = 1;
+                move_cat();
+            }
+            else {
+                current_hide_time -= Time.deltaTime;
+            }
+            if (current_hide_time <= 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                hidden = false;
+            }
+            if (is_dropped)
+            {
+                timer -= Time.deltaTime;
+                if (timer < 0)
+                {
+                    is_dropped = false;
+                    timer = 1;
+                }
             }
         }
-
     }
 
     void OnCollisionEnter2D(Collision2D wall)
