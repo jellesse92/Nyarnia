@@ -86,28 +86,41 @@ public class GameState : MonoBehaviour {
     void OnGUI()
     {
 		// GameMode 0 is main gameplay screen
-		if (GameMode == 0) {
+		//if (GameMode == 0) {
 			GUIStyle style = new GUIStyle (GUI.skin.GetStyle ("label"));
 			style.fontSize = 30;
 			GUI.color = Color.black;
 			GUI.Label (new Rect (25, 25, Screen.width / 2, Screen.height / 2), "Total: " + num_of_cats, style);
 			GUI.Label (new Rect (25, 60, Screen.width / 2, Screen.height / 2), "Visible: " + hidden_cats, style);
 			GUI.Label (new Rect (25, 100, Screen.width / 2, Screen.height / 2), "Time: " + (int)timeLeft, style);
-		}
+		//}
 
 		// GameMode 1 is Score screen 
-		if (GameMode == 1) {
-			GUIStyle style2 = new GUIStyle (GUI.skin.GetStyle ("label"));
-			style2.fontSize = 40;
-			GUI.color = Color.black;
-			GUI.Label (new Rect (25, 25, Screen.width / 2, Screen.height / 2), "You have hidden : " + final_hidden + " cats!", style2);
-		}
+		//if (GameMode == 1) {
+		//	GUIStyle style2 = new GUIStyle (GUI.skin.GetStyle ("label"));
+		//	style2.fontSize = 40;
+		//	GUI.color = Color.black;
+		//	GUI.Label (new Rect (25, 25, Screen.width / 2, Screen.height / 2), "You have hidden : " + final_hidden + " cats!", style2);
+		//}
 	}
 	public void LoadGameLevel()
 	{
 		GameMode = 0;
 		Application.LoadLevel ("MainScene");
 	}
+
+    public void reset()
+    {
+        hidden_cats = 0;
+        final_hidden = 0;
+        inPlay = true;
+        hidden_cats = 0;
+        TempNUM = 3;
+        CamTIME = 5;
+        transitionDuration = 5f;
+        timeLeft = 30;
+        GameMode = 0;
+}
 
 	public IEnumerator CamPan()
 	{
