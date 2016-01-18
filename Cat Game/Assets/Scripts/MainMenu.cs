@@ -27,24 +27,24 @@ public class MainMenu : MonoBehaviour {
 		// Main Menu
 		if (Mode == 0) {
 			GUI.Box (new Rect (10, 10, 100, 30), "Main Menu");
-			if(GUI.Button (new Rect (500,250,150,40),startImg, myStyle))
+			if(GUI.Button (new Rect (600,250,150,40),startImg, myStyle))
 			{
 				Application.LoadLevel ("MainScene");
 			}
-			if(GUI.Button (new Rect (500,300,150,40), settingImg, myStyle))
+			if(GUI.Button (new Rect (600,300,150,40), settingImg, myStyle))
 			{
 				Mode = 1;
 			}
-			if(GUI.Button (new Rect (500,350,150,40), howtoImg, myStyle))
+			if(GUI.Button (new Rect (600,350,150,40), howtoImg, myStyle))
 			{
 				Application.LoadLevel ("Tutorial");
 			}
-			if(GUI.Button (new Rect (500,400,150,40), "Credits"))
+			if(GUI.Button (new Rect (600,400,150,40), "Credits"))
 			{
 				Mode = 3;
 			}
 			
-			if(GUI.Button (new Rect (500,450,150,40), quitImg, myStyle))
+			if(GUI.Button (new Rect (600,450,150,40), quitImg, myStyle))
 			{
 				Application.Quit();
 				Debug.Log ("Quit Game");

@@ -11,9 +11,9 @@ public class CameraPanning : MonoBehaviour {
 
     public void moveRight()
     {
-        if (Camera.main.transform.position.x <= 0)
+        if (Camera.main.transform.position.x <= 1)
         {
-            Camera.main.transform.Translate(4, 0, 0);
+            Camera.main.transform.Translate(2, 0, 0);
         }
     }
 
