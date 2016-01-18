@@ -5,13 +5,13 @@ public class CameraPanning : MonoBehaviour {
 
     public void moveLeft()
     {
-        if (Camera.main.transform.position.x >= -30)
+        if (Camera.main.transform.position.x >= -32)
         Camera.main.transform.Translate(-4, 0, 0);
     }
 
     public void moveRight()
     {
-        if (Camera.main.transform.position.x <= -1)
+        if (Camera.main.transform.position.x <= 0)
         {
             Camera.main.transform.Translate(4, 0, 0);
         }

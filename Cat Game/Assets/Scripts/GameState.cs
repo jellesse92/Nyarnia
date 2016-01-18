@@ -94,7 +94,7 @@ public class GameState : MonoBehaviour {
 	public void LoadGameLevel()
 	{
 		GameMode = 0;
-		Application.LoadLevel ("Main Game Screen");
+		Application.LoadLevel ("MainScene");
 	}
 
 	public IEnumerator CamPan()
